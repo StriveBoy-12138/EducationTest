@@ -1,0 +1,12 @@
+<!--miniprogram/pages/homepage/homepage.wxml-->
+<view class="top-backgroud-view"></view>
+<view class="info-container">
+  <image src="{{avatar}}" class="info-image"></image>
+  <view class="info-username">{{nickname}}</view>
+  <van-cell-group custom-class="info-group">
+    <van-cell is-link title="个人资料" link-type="navigateTo" url="../../pages/personInfo/personInfo"/>
+    <van-cell is-link title="考试记录" bindtap="toCourse"/>
+    <van-cell is-link title="课程记录" bindtap="toCourse"/>
+    <van-cell is-link title="退出登录" bindtap="logout"/>
+  </van-cell-group>
+</view>

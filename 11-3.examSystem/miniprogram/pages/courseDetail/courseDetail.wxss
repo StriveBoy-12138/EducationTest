@@ -1,0 +1,38 @@
+/* miniprogram/pages/courseDetail/courseDetail.wxss */
+page{
+  background-color: #ffffff;
+}
+
+.top-image{
+  width: 100vw;
+  height: 360rpx;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.top-tab{
+  position: fixed;
+  top: 360rpx;
+}
+
+.course-info-container{
+  width: 680rpx;
+  margin-left: 35rpx;
+  margin-top: 20rpx;
+}
+
+.course-info-title{
+  font-size: 38rpx;
+  font-weight: 550;
+  line-height: 2.0;
+  color: #34495e;
+}
+
+.course-info-content{
+  font-size: 32rpx;
+  line-height: 1.5;
+  color: #999999;
+  white-space: pre-wrap;
+  margin-bottom: 30rpx;
+}

@@ -1,0 +1,20 @@
+/* components/QuestionItem/QuestionItem.wxss */
+.container {
+  width: 690rpx;
+  padding: 30rpx;
+  height: 320rpx;
+  margin-bottom: 30rpx;
+}
+
+.question-description {
+  font-size: 40rpx;
+  line-height: 1.5;
+  color: #34495e;
+  margin-bottom: 60rpx;
+}
+
+.question-radio-item,
+.question-checkbox-item {
+  margin-bottom: 20rpx;
+  font-size: 36rpx;
+}

@@ -1,0 +1,27 @@
+<!--miniprogram/pages/course/course.wxml-->
+<van-tabs active="{{active}}" color="#80D0C7" sticky swipeable bind:change="onChangeTab">
+  <van-tab title="正在学习">
+    <view class="course-container">
+      <block wx:for="{{courseList}}" wx:key="id">
+        <course-item course="{{item}}" id="{{item.pkId}}" data-courseimg="{{item.picture}}"
+          data-courseDes="{{item.des}}" data-courseName="{{item.title}}" bindtap="toCourseDetail"></course-item>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="完成学习">
+    <view class="course-container">
+
+    </view>
+  </van-tab>
+  <van-tab title="考试安排">
+    <view wx:if="{{noExam}}" class="no-data-container">
+      <i class="iconfont icon-zanwushuju" style="font-size:120rpx;"></i>
+      <text style="font-size:36rpx;color:#666666;">😉暂无考试安排!</text>
+    </view>
+    <view wx:if="{{!noExam}}" class="exam-container">
+      <block wx:for="{{examList}}" wx:key="id">
+        <exam-item exam="{{item}}" id="{{item.pkId}}" bindtap="toExam" data-index="{{index}}"></exam-item>
+      </block>
+    </view>
+  </van-tab>
+</van-tabs>

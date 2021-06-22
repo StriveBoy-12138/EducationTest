@@ -1,0 +1,29 @@
+<!--miniprogram/pages/exam/exam.wxml-->
+<view wx:if="{{!startExam}}" class="before-exam-container">
+  <view class="exam-info">
+    <view class="course-name">{{courseName}}</view>
+    <view class="exam-name">{{examName}}</view>
+    <view class="exam-time">更新时间 : {{finishTime}}</view>
+    <view class="exam-time">考试状态 : {{status===0?'未考试':''}} {{status===1?'考试中':''}} <text wx:if="{{status === 2}}">已完成
+        {{userScore}}分</text></view>
+  </view>
+  <view class="btn start-btn" bindtap="startExam">{{status === 0?'开始考试':'继续考试'}}</view>
+</view>
+
+<view wx:if="{{startExam&&hasQuestions}}" class="exam-container">
+  <block wx:for="{{examData}}" wx:key="index">
+    <question-item bind:emitAnswer="getAnswer" wx:if="{{index === activeIndex}}" examIndex="{{index}}"
+      question="{{item}}"></question-item>
+  </block>
+</view>
+
+<view wx:if="{{startExam}}" class="footer-btns">
+  <view wx:if="{{hasLastOne && hasQuestions}}" class="btn" bindtap="lastOne">上一题</view>
+  <view wx:if="{{hasNextOne && hasQuestions}}" class="btn" bindtap="nextOne">下一题</view>
+  <view wx:if="{{!hasNextOne && hasQuestions}}" class="btn submit" bindtap="submitAnswer">提交答案</view>
+</view>
+
+<view wx:if="{{!hasQuestions}}" class="no-data">
+  <text class="iconfont icon-zanwushuju" style="font-size:200rpx;color:#333333;"></text>
+  <text style="font-size:34rpx;font-weight:400;color:#666666;margin-top:40rpx;">😶暂无数据...</text>
+</view>

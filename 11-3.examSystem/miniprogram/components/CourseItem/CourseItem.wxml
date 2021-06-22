@@ -1,0 +1,9 @@
+<!--components/CourseItem/CourseItem.wxml-->
+<view class="course-item-container">
+  <image class="course-item-image" src="{{courseSrc}}"></image>
+  <view class="course-item-info">
+    <view class="course-item-name van-multi-ellipsis--l2">{{courseName}}</view>
+    <view class="van-ellipsis">{{courseType}}</view>
+    <!-- <view class="van-ellipsis--l2">{{courseSchedule}}</view> -->
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<!--miniprogram/pages/infoDetail/infoDetail.wxml-->
+<view class="container">
+  <rich-text nodes="{{info.info}}"></rich-text>
+</view>

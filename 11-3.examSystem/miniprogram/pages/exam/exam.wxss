@@ -1,0 +1,86 @@
+/* miniprogram/pages/exam/exam.wxss */
+.before-exam-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.exam-info{
+  width: 640rpx;
+  padding: 30rpx;
+  margin-left: 25rpx;
+  margin-bottom: 200rpx;
+  border-radius: 30rpx;
+  background-color: white;
+  -webkit-box-shadow: 4rpx 4rpx 4rpx 2rpx rgba(100, 100, 100, 0.2);
+  -moz-box-shadow: 4rpx 4rpx 4rpx 2rpx rgba(100, 100, 100, 0.2);
+  box-shadow: 4rpx 4rpx 8rpx 4rpx rgba(100, 100, 100, 0.2);
+}
+
+.course-name {
+  font-size: 42rpx;
+  color: #34495e;
+}
+
+.exam-name {
+  font-size: 38rpx;
+  color: #34495e;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.exam-time {
+  font-size: 32rpx;
+  color: #999999;
+}
+
+.footer-btns {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+}
+
+.exam-container {
+  width: 100vw;
+}
+
+.btn {
+  width: 280rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 42rpx;
+  letter-spacing: 3rpx;
+  color: white;
+  background-color: #3498db;
+}
+
+.quit-btn {
+  background-color: #e74c3c;
+}
+
+.submit-btn {
+  background-color: #1abc9c;
+}
+
+.start-btn{
+  width: 320rpx;
+  margin-left: 25rpx;
+}
+
+.no-data{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

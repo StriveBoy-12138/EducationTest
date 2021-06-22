@@ -1,0 +1,55 @@
+#本地项目服务器配置
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/db_examination?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: _Hsxh291012
+      initialSize: 1
+      minIdle: 5
+      maxActive: 100
+      maxWait: 60000
+      testWhileIdle: true
+      testOnReturn: false
+      testOnBorrow: false
+      validationQuery: SELECT 1
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      logAbandoned: true
+      filters: mergeStat
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 25200000
+
+  jpa:
+    database: mysql
+    #控制台输出JPA自动生成的sql语句。
+    show-sql: true
+
+  #redis配置
+  redis:
+    #redis数据库索引(默认为0)
+    database: 0
+    #redis服务器地址
+    host: 127.0.0.1
+    #redis服务器连接端口
+    port: 6379
+    #redis连接密码
+    password:
+    #redis连接池设置
+    jedis:
+      pool:
+        #最大空闲连接
+        max-idle: 100
+        #最小空闲连接
+        min-idle: 1
+        #最大连接数(负数表示没有限制)
+        max-active: 1000
+        #最大阻塞等待时间(负数表示没有限制)
+        max-wait: -1ms
+
+# 自定义参数
+oss:
+  # oss 上传回调地址
+  # 本地测试推荐工具 ngrok 将本地服务暴露在互联网中
+  callback-url: http://examination.cn1.utools.club/examination-admin-api/token/callback

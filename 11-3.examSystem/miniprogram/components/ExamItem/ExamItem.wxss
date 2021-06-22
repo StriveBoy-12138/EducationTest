@@ -1,0 +1,30 @@
+/* components/ExamItem/ExamItem.wxss */
+.container {
+  width: 680rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  -webkit-box-shadow: 4rpx 4rpx 4rpx 2rpx rgba(100, 100, 100, 0.2);
+  -moz-box-shadow: 4rpx 4rpx 4rpx 2rpx rgba(100, 100, 100, 0.2);
+  box-shadow: 4rpx 4rpx 8rpx 2rpx rgba(100, 100, 100, 0.2);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.course-name {
+  font-size: 38rpx;
+  color: #34495e;
+}
+
+.exam-name {
+  font-size: 34rpx;
+  color: #34495e;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.exam-time {
+  font-size: 28rpx;
+  color: #999999;
+}

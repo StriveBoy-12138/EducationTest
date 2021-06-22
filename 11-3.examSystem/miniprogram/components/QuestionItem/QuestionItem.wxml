@@ -1,0 +1,42 @@
+<!--components/QuestionItem/QuestionItem.wxml-->
+<view class="container">
+  <!-- 单选和判断 -->
+  <view wx:if="{{question.type===0 || question.type===3}}">
+    <view class="question-description">{{examIndex+1}}. ({{questionTypeMap[question.type]}})
+      <rich-text nodes="{{question.title}}"></rich-text>
+      <!-- <rich-text nodes="{{question.analysis}}"></rich-text> -->
+    </view>
+    <van-radio-group value="{{radio}}" bind:change="onChangeRadio">
+      <block wx:for="{{question.answer.answerOptionList}}" wx:key="index">
+        <van-radio custom-class="question-radio-item" name="{{item.id}}">{{item.content}}</van-radio>
+      </block>
+    </van-radio-group>
+  </view>
+
+  <!-- 多选题 -->
+  <view wx:if="{{question.type===1}}">
+    <view class="question-description">{{examIndex+1}}({{questionTypeMap[question.type]}})
+      <rich-text nodes="{{question.title}}"></rich-text>
+      <rich-text nodes="{{question.analysis}}"></rich-text>
+    </view>
+    <van-checkbox-group value="{{checkbox}}" bind:change="onChangeCheckbox">
+      <block wx:for="{{question.answer.answerOptionList}}" wx:key="index">
+        <van-checkbox custom-class="question-checkbox-item" name="{{item.id}}">{{item.content}}</van-checkbox>
+      </block>
+    </van-checkbox-group>
+  </view>
+
+  <!-- 简答和填空 -->
+  <view wx:if="{{question.type===2 || question.type===4}}">
+    <view class="question-description">{{examIndex+1}}({{questionTypeMap[question.type]}})
+      <rich-text nodes="{{question.title}}"></rich-text>
+      <rich-text nodes="{{question.analysis}}"></rich-text>
+    </view>
+    <van-cell-group>
+      <van-field value="{{content}}" bind:blur="getContent" type="textarea" placeholder="请输入答案,多个答案空格分开" autosize
+        border="{{false}}" />
+    </van-cell-group>
+  </view>
+
+  <view style="height:300rpx;"></view>
+</view>

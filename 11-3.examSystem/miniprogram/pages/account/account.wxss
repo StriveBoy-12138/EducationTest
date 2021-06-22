@@ -1,0 +1,58 @@
+/* miniprogram/pages/account/account.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2C61B4;
+  background-image: linear-gradient(160deg, #2C61B4 0%, #80D0C7 100%);
+  position: relative;
+}
+
+.container {
+  width: 660rpx;
+  height: auto;
+  padding: 40rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100rpx;
+}
+
+.account-image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+  margin-bottom: 80rpx;
+}
+
+.account-cell-group {
+  width: 660rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 80rpx;
+}
+
+.account-button {
+  width: 400rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
+  font-size: 34rpx;
+  letter-spacing: 10rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: white;
+  background-color: #2ecc71;
+  margin-bottom: 40rpx;
+}
+
+.account-tip {
+  color: #eeeeee;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  position: absolute;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}

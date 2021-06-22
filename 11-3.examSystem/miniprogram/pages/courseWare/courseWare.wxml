@@ -1,0 +1,21 @@
+<!--miniprogram/pages/courseWare/courseWare.wxml-->
+<view wx:if="{{type === 0}}" class="text-container">
+  <rich-text nodes="{{content}}"></rich-text>
+</view>
+
+<view wx:if="{{type === 1}}" class="doc-type">
+  <text class="iconfont icon-zanwushuju" style="font-size:200rpx;color:#333333;"></text>
+  <text style="font-size:34rpx;font-weight:400;color:#666666;margin-top:40rpx;">😶文档查看模式...</text>
+</view>
+
+<view wx:if="{{type === 2}}">
+  <image src="{{content}}" style="width:100vw;"></image>
+</view>
+
+<view wx:if="{{type === 3}}" class="audio-container">
+  <audio name="课件音频" poster="../../images/logo.png" author="课件" src="{{content}}" id="myAudio" controls loop></audio>
+</view>
+
+<view wx:if="{{type === 4 || type === 5}}">
+  <video src="{{content}}" style="width:100vw;"></video>
+</view>

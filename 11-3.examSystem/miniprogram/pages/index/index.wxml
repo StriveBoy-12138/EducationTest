@@ -1,0 +1,18 @@
+<!--miniprogram/pages/index/index.wxml-->
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000"
+	indicator-active-color="#fff" circular="true">
+	<block wx:for="{{swiperImgUrls}}" wx:key="index">
+		<swiper-item>
+			<image class="swiperImg" mode="widthFix" src="{{item}}"></image>
+		</swiper-item>
+	</block>
+</swiper>
+
+<van-search value="{{keywords}}" shape="round" bind:change="onChangeKeywords" bind:search="onSearchKeywords"
+	placeholder="请输入搜索关键词" />
+
+<view class="recomment-course-list-container">
+	<block wx:for="{{infoList}}" wx:key="id">
+		<recommend-course-item info="{{item}}" id="{{index}}" bindtap="toInfoDetail"></recommend-course-item>
+	</block>
+</view>

@@ -1,0 +1,44 @@
+/* miniprogram/pages/homepage/homepage.wxss */
+.top-backgroud-view {
+  height: 40vh;
+  width: 100vw;
+  background-color: #2C61B4;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.info-container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+}
+
+.info-username {
+  font-size: 40rpx;
+  color: #ffffff;
+  letter-spacing: 3rpx;
+  margin-bottom: 4vh;
+}
+
+.info-group {
+  width: 96vw;
+  border-radius: 20rpx;
+  overflow: hidden;
+  -webkit-box-shadow: 4rpx 4rpx 8rpx 2rpx rgba(100, 100, 100, 0.5);
+  -moz-box-shadow: 4rpx 4rpx 8rpx 2rpx rgba(100, 100, 100, 0.5);
+  box-shadow: 4rpx 4rpx 8rpx 2rpx rgba(100, 100, 100, 0.5);
+}

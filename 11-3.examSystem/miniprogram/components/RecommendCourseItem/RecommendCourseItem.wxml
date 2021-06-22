@@ -1,0 +1,9 @@
+<!--miniprogram/components/RecommendCourseItem/RecommendCourseItem.wxml-->
+<view class="recommend-course-item-container">
+  <image class="recommend-course-item-image" mode="aspectFill" src="{{infoSrc}}"></image>
+  <view class="recommend-course-item-info">
+    <view class="text recommend-course-item-name">{{infoName}}</view>
+    <!-- <rich-text nodes="{{infoContent}}" class="text"></rich-text> -->
+    <view class="text">{{infoTime}}</view>
+  </view>
+</view>

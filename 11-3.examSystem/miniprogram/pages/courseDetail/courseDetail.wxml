@@ -1,0 +1,47 @@
+<!--miniprogram/pages/courseDetail/courseDetail.wxml-->
+<image class="top-image" src="{{courseImg}}">
+</image>
+<van-tabs active="{{active}}" color="#80D0C7" custom-class="top-tab" swipeable bind:change="onChangeTab">
+  <van-tab title="课程介绍">
+    <view class="course-info-container">
+      <view class="course-info-title">
+        课程简介
+      </view>
+      <view class="course-info-content">{{courseDes}}</view>
+      <view class="course-info-title">
+        授课目标
+      </view>
+      <view class="course-info-content">{{courseGoal}}</view>
+      <view class="course-info-title">
+        课程学分
+      </view>
+      <view class="course-info-content">{{credit}}</view>
+    </view>
+    
+  </van-tab>
+  <van-tab title="课程大纲">
+    <block wx:for="{{catalogList}}" wx:key="id" wx:for-index="f_index" wx:for-item="f_item">
+      <van-collapse value="{{ activeNames }}" bind:change="onChangeCollapse">
+      <van-collapse-item title="{{f_item.title}}" name="{{f_item.pkId}}">
+        <van-cell-group>
+          <block wx:for="{{f_item.courseWare}}" wx:key="id" wx:for-index="s_index" wx:for-item="s_item">
+            <van-cell title="{{s_index+1}}. {{s_item.coursewareTitle}}" data-content="{{s_item.content}}" data-type="{{s_item.coursewareType}}" bindtap="toWareDetail"/>
+          </block>
+        </van-cell-group>
+      </van-collapse-item>
+    </van-collapse>
+	  </block>
+  </van-tab>
+  <van-tab title="课程讨论">
+    <view class="course-info-container">
+      <comment-item></comment-item>
+      <comment-item></comment-item>
+      <comment-item></comment-item>
+      <comment-item></comment-item>
+      <comment-item></comment-item>
+      <comment-item></comment-item>
+      <comment-item></comment-item>
+      <comment-item></comment-item>
+    </view>
+  </van-tab>
+</van-tabs>

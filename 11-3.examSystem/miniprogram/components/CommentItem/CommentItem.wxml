@@ -1,0 +1,11 @@
+<!--components/CommentItem/CommentItem.wxml-->
+<view class="comment">
+  <view class="comment-title">
+    <image class="comment-portrait" src="../../images/logo.png"></image>
+    <text class="comment-nickname">南邮吴彦祖</text>
+  </view>
+  <view class="comment-content">
+    郭老师人很幽默，课程设计很用心，讲课生动活泼，迄今为止唯一一门学到停不下来的python课程，谢谢郭老师！
+  </view>
+  <view class="comment-time">2021-05-10 09:20:00</view>
+</view>

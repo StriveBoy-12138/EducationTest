@@ -1,0 +1,7 @@
+<!--components/ExamItem/ExamItem.wxml-->
+<view class="container">
+  <view class="course-name">{{courseName}}</view>
+  <view class="exam-name">{{examName}}</view>
+  <view class="exam-time">更新时间 : {{finishTime}}</view>
+  <view class="exam-time">考试状态 : {{status===0?'未考试':''}} {{status===1?'考试中':''}} <text wx:if="{{status === 2}}">已完成 {{userScore}}分</text></view>
+</view>

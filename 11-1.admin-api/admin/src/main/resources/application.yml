@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: admin-api
+  profiles:
+    active: @spring.profiles.active@
+  resources:
+    static-locations: classpath:/resources/,upload
+  servlet:
+    multipart:
+      location:
+      max-file-size: 104857600
+      max-request-size: 104857600
+      file-size-threshold: 0
+      resolve-lazily: false
+  jackson:
+    time-zone: GMT+8
+logging:
+  config: classpath:log/logback-spring.xml
+
+server:
+  port: 8082
+  servlet:
+    context-path: /examination-admin-api
+
+#热部署生效
+devtools:
+  restart:
+    enabled: true
+    #设置重启的目录
+    additional-paths: src/main/java
+
+# 自定义参数
+oss:
+  access-id: LTAI4G6ZKvjtT2ZrxsY2vund
+  access-key: 8X8gTQeQwu2jIoGvtlUNXKSAEa7937
+  end-point: oss-cn-hangzhou.aliyuncs.com
+  bucket: miaoruixiang
+  host: http://${oss.bucket}.${oss.end-point}
+
+swagger:
+  enabled: true
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+/* miniprogram/pages/infoDetail/infoDetail.wxss */
+.container{
+  width: 700rpx;
+  padding: 25rpx;
+}

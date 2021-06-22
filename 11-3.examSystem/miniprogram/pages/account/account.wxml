@@ -1,0 +1,29 @@
+<!--miniprogram/pages/account/account.wxml-->
+<view class="container" wx:if="{{hasAccount}}">
+  <image class="account-image" src="../../images/logo.png"></image>
+  <van-cell-group custom-class="account-cell-group">
+    <van-field model:value="{{account}}" clearable label="账户" placeholder="请输入账号" border="{{false}}" />
+    <van-field model:value="{{password}}" type="password" clearable label="密码" placeholder="请输入密码" border="{{false}}" />
+  </van-cell-group>
+  <view class="account-button" bindtap="login">登录</view>
+</view>
+
+<view class="container" wx:if="{{!hasAccount}}">
+  <image class="account-image" src="{{avatar}}" bindtap="chooseImageTap"></image>
+  <van-cell-group custom-class="account-cell-group">
+    <van-field model:value="{{nickname}}" clearable label="姓名" placeholder="请输入姓名" border="{{false}}"/>
+    <van-field model:value="{{account}}"  clearable label="账户" placeholder="请输入账号" border="{{false}}"/>
+    <van-field model:value="{{password}}" clearable label="密码" placeholder="请输入密码" border="{{false}}" type="password"/>
+  </van-cell-group>
+  <view class="account-button" bindtap="register">注册</view>
+</view>
+
+<view wx:if="{{hasAccount}}" class="account-tip" bindtap="toRegister">
+  没有账户?点击注册!
+</view>
+
+<view wx:if="{{!hasAccount}}" class="account-tip" bindtap="toLogin">
+  已有账户?点击登录!
+</view>
+
+<van-notify id="van-notify" />

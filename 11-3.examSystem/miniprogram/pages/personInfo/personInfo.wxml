@@ -1,0 +1,10 @@
+<!--miniprogram/pages/personInfo/personInfo.wxml-->
+<view class="avatar-container">
+  <image class="avatar-img" src="{{avatar||'../../images/logo.png'}}" bindtap="chooseImageTap"></image>
+</view>
+
+<van-cell-group>
+  <van-field label="昵称" model:value="{{nickname}}" placeholder="请输入昵称" border="{{ false }}" />
+</van-cell-group>
+
+<view class="btn" bindtap="updateInfo">更新个人信息</view>

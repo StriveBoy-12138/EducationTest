@@ -1,0 +1,19 @@
+/* miniprogram/pages/index/index.wxss */
+.swiper {
+  height: 360rpx;
+}
+
+.swiperImg {
+  width: 730rpx;
+  height: 100%;
+  margin: 10rpx;
+  border-radius: 20rpx;
+}
+
+.recomment-course-list-container{
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 160rpx;
+}
