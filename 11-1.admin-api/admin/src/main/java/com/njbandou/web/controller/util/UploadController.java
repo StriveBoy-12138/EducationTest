@@ -3,6 +3,7 @@ package com.njbandou.web.controller.util;
 import com.njbandou.web.FileUtils;
 import com.njbandou.web.constant.UtilConstant;
 import com.njbandou.web.utils.ExcelUtils;
+import io.swagger.annotations.*;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +38,10 @@ public class UploadController {
      * @throws IOException
      */
     @PostMapping(value = "excelUpload")
+    @ApiOperation(value = "excel文件上传接口",notes = "返回结果fileName-String，path-String，code-{1-上传失败，0-上传成功}，msg" +
+            "-{文件为空！，上传失败，上传成功}，",
+            httpMethod = "POST")
+    @ApiImplicitParam(name = "file",value = "后缀为xls或xlsx格式的文件")
     public void excelUpload(HttpServletRequest request, HttpServletResponse response,
                             @RequestParam("file") MultipartFile file) throws IOException {
         response.setContentType(UtilConstant.CONTENT_TYPE);

@@ -9,6 +9,7 @@ import com.aliyun.oss.model.PolicyConditions;
 import com.njbandou.web.config.OssConfig;
 import com.njbandou.web.redis.RedisConstant;
 import com.njbandou.web.redis.RedisUtil;
+import io.swagger.annotations.*;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -42,6 +43,10 @@ public class AliOssUploadController {
 
     @ResponseBody
     @GetMapping(value = "/aliOssToken")
+    @ApiOperation(value = "阿里云对象存储登录验证，从redis拿OSS_TOKEN,若已登录有token则直接返回，无则新申请。",
+            notes = "返回值字段accessid-String\n,policy-String\n,signature-String\n,dir-String\n,host-String,expire-String\n," +
+                    "callback-String{callbackUrl-String,callbackBody-固定格式String，callbackBodyType-appxxxform格式}")
+    @ApiImplicitParam(name = "type",value = "用户上传文件时指定的前缀（文件夹）",paramType = "query",dataType = "Integer")
     public Map aliOssToken(HttpServletRequest request, HttpServletResponse response,
                            @RequestParam Integer type) {
         OSS ossClient = new OSSClientBuilder().build(ossConfig.getEndpoint(), ossConfig.getAccessId(), ossConfig.getAccessKey());
@@ -63,11 +68,11 @@ public class AliOssUploadController {
         }
         try {
             Map<String, Object> respMap = redisUtil.get(RedisConstant.OSS_TOKEN, LinkedHashMap.class);
-
+            //已经登录过了,直接返回
             if (respMap != null && respMap.get("dir").equals(dir)) {
                 return respMap;
             }
-
+            //新的map填充
             respMap = new LinkedHashMap<>();
 
             long expireTime = 30;
@@ -111,6 +116,9 @@ public class AliOssUploadController {
 
     @ResponseBody
     @PostMapping(value = "/callback")
+    @ApiOperation(value = "阿里云对象存储方回调接口，验证入参ossCallbackBody后服务器响应结果",notes = "response的header填充Content-Length属性\n," +
+            "callback-回调方法名称，url\n,location\n,status{ok-成功，err-失败}")
+    @ApiImplicitParam(name = "ossCallbackBody",value = "格式如下-filename=${object}&size=${size}&width=${imageInfo.width}&mimeType=${mimeType}&height=${imageInfo.height}")
     protected void callback(HttpServletRequest request, HttpServletResponse response,
                             @RequestBody String ossCallbackBody
     ) throws IOException {
